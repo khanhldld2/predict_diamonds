@@ -2,3 +2,5 @@ scikit-learn
 xgboost
 pandas
 base64
+PIL
+Image
