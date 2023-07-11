@@ -5,7 +5,7 @@ import pandas as pd
 import base64
 # Loading up the Regression model we created
 model = xgb.XGBRegressor ()
-model.load_model ('C:/Users/khanh/OneDrive/CN8 SUMMER2023/DBM301/Project/app/models/xgb_model1000pro.bin')
+model.load_model ('app/models/xgb_model1000pro.bin')
 
 # Caching the model for faster loading
 @st.cache_resource
@@ -62,7 +62,7 @@ def predict ( carat , cut , color , clarity , depth , table , x , y , z ):
 
 
 st.title ('Thần tài đã đến')
-image = Image.open('C:/Users/khanh/OneDrive/CN8 SUMMER2023/DBM301/Project/app/utils/imgs/kim_cuong.jpeg')
+image = Image.open('app/utils/imgs/kim_cuong.jpeg')
 st.image (image)
 st.header ('Vui lòng nhập thông tin kim cương cần mua:')
 carat = st.number_input ('Carat Weight :', min_value =0.1 , max_value =10.0 , value =1.0)
@@ -88,7 +88,7 @@ def autoplay_audio ( file_path : str ):
       """
       st.markdown(md, unsafe_allow_html = True,)
 
-autoplay_audio ("C:/Users/khanh/OneDrive/CN8 SUMMER2023/DBM301/Project/app/utils/audios/background_music.mp3")
+autoplay_audio ("app/utils/audios/background_music.mp3")
 
 if st.button ('Predict Price '):
                 price = predict ( carat , cut , color , clarity , depth , table , x , y , z)
